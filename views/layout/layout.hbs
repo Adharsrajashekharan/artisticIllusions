@@ -1,0 +1,14 @@
+
+        {{#if admin}}
+        {{>admin-header}}
+        {{else}}
+        {{>user-header}}
+        {{/if}}
+        {{{body}}}
+
+
+    {{#if admin}}
+   {{>admin-footer}}
+   {{else}}
+   {{>user-footer}}
+   {{/if}}

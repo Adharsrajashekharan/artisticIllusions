@@ -1,0 +1,89 @@
+{{!-- <div class="container">
+
+<h2 class="text-center">edit product</h2>
+<form action="/admin/edit-product/{{category._id}}" method="post" enctype="multipart/form-data">
+<div class="form-group">
+    <label for="number">no</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" name="no" value="{{product.no}}">
+  </div>
+  <div class="form-group">
+    <label for="name">name</label>
+    <input type="name" class="form-control" id="exampleFormControlInput1" name="name" value="{{product.name}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">category</label>
+    <input type="text" class="form-control"  id="exampleFormControlInput1" name="category" value="{{product.category}}">
+  </div>
+  <div class="form-group">
+    <label for="name">price</label>
+    <input type="name" class="form-control" id="exampleFormControlInput1" name="price" value="{{product.price}}">
+  </div>
+  
+  
+ 
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <input type="text" value="{{product.description}}" name="" id="">
+    <textarea   class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" >
+      {{product.description}}
+    </textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">file input</label>
+    <img src="/product-images/{{product._id}}.jpg" alt="" style="width: 100px;height:100px ;">
+    <input type="file" class="form-control-file"
+    id="exampleFormControlFile1" name="image">
+  </div>
+  <button class="btn btn-success" type="submit">submit</button>
+</form>
+</div> --}}
+<div class="container">
+
+<h2 class="text-center">Add Category</h2>
+<form action="/admin/edit-category{{categories._id}}" method="post" enctype="multipart/form-data">
+{{!-- <div class="form-group">
+    <label for="number">no</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" name="no">
+  </div> --}}
+  {{!-- <div class="form-group">
+    <label for="name">name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="Category">
+  </div> --}}
+  
+  {{!-- <div  class="form-group">
+    <label for="exampleFormControlInput1">category</label>
+    <input type="text" class="form-control"  id="exampleFormControlInput1" name="category" >
+  </div> --}}
+      category
+
+  <div class="form-group">
+  <label>
+<input class="" list="browsers" value="{{category.Category}}" name="cat" /></label>
+<datalist id="browsers">
+  <option value="Antique">
+  <option value="lights">
+  <option value="others">
+
+</datalist>
+</div>
+  {{!-- <div class="form-group">
+    <label for="name">price</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" name="price">
+  </div> --}}
+  
+  
+ 
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control"    id="exampleFormControlTextarea1" rows="3" name="Description">
+      {{category.Description}}
+    </textarea>
+  </div>
+  {{!-- <div class="form-group">
+    <label for="exampleFormControlFile1">file input</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+  </div> --}}
+  <button class="btn btn-success" type="submit">submit</button>
+</form>
+
+</div>

@@ -1,0 +1,278 @@
+
+        <!--====== End - Main Header ======-->
+
+
+        <!--====== App Content ======-->
+        <div class="app-content">
+
+            <!--====== Section 1 ======-->
+            <div class="u-s-p-y-60">
+
+                <!--====== Section Content ======-->
+                <div class="section__content">
+                    <div class="container">
+                        <div class="breadcrumb">
+                            <div class="breadcrumb__wrap">
+                                <ul class="breadcrumb__list">
+                                    <li class="has-separator">
+
+                                        <a href="">Home</a></li>
+                                    <li class="is-marked">
+
+                                        <a href="">Wishlist</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====== End - Section 1 ======-->
+
+
+            <!--====== Section 2 ======-->
+            <div class="u-s-p-b-60">
+
+                <!--====== Section Intro ======-->
+                <div class="section__intro u-s-m-b-60">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section__text-wrap">
+                                    <h1 class="section__heading u-c-secondary">Wishlist</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section Intro ======-->
+
+
+                <!--====== Section Content ======-->
+                <div class="section__content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                <!--====== Wishlist Product ======-->                                           {{#each products}}
+
+                                <div class="w-r u-s-m-b-30">
+                                    <div class="w-r__container">
+                                        <div class="w-r__wrap-1">
+                                            <div class="w-r__img-wrap">
+
+                                                <img class="u-img-fluid" src="/product-images/{{this.product._id}}.jpg" alt=""></div>
+                                            <div class="w-r__info">
+
+                                                <span class="w-r__name">
+
+                                                    <a href="/product-images/{{product._id}}.jpg">{{this.product.name}}</a></span>
+
+                                                <span class="w-r__category">
+
+                                                    <a href="">{{this.product.category}}</a></span>
+
+                                                <span class="w-r__price">$125.00</span>
+
+                                                    {{!-- <span class="w-r__discount">$160.00</span> --}}
+                                                    
+                                                    </div>
+                                        </div>
+                                        <div class="w-r__wrap-2">
+
+                                            <a class="w-r__link btn--e-brand-b-2" data-modal="modal" data-modal-id="#add-to-cart" href="/add-to-cart/{{product._id}}">ADD TO CART</a>
+
+                                            <a class="w-r__link btn--e-transparent-platinum-b-2" href="/product-images/{{product._id}}.jpg">VIEW</a>
+
+                                            <a class="w-r__link btn--e-transparent-platinum-b-2 delete"onclick="deleteQuantity('{{this._id}}','{{this.product._id}}')" href="#">REMOVE</a></div>
+                                    </div>
+                                </div>
+
+
+      
+
+                                {{/each}}
+                                <!--====== End - Wishlist Product ======-->
+
+
+                                <!--====== Wishlist Product ======-->
+                                {{!-- <div class="w-r u-s-m-b-30">
+                                    <div class="w-r__container">
+                                        <div class="w-r__wrap-1">
+                                            <div class="w-r__img-wrap">
+
+                                                <img class="u-img-fluid" src="images/product/women/product8.jpg" alt=""></div>
+                                            <div class="w-r__info">
+
+                                                <span class="w-r__name">
+
+                                                    <a href="">New Dress D Nice Elegant</a></span>
+
+                                                <span class="w-r__category">
+
+                                                    <a href="">Women Clothing</a></span>
+
+                                                <span class="w-r__price">$125.00
+
+                                                    <span class="w-r__discount">$160.00</span></span></div>
+                                        </div>
+                                        <div class="w-r__wrap-2">
+
+                                            <a class="w-r__link btn--e-brand-b-2" data-modal="modal" data-modal-id="#add-to-cart">ADD TO CART</a>
+
+                                            <a class="w-r__link btn--e-transparent-platinum-b-2" href="">VIEW</a>
+
+                                            <a class="w-r__link btn--e-transparent-platinum-b-2" href="#">REMOVE</a></div>
+                                    </div>
+                                </div> --}}
+                                <!--====== End - Wishlist Product ======-->
+
+
+                                <!--====== Wishlist Product ======-->
+                                {{!-- <div class="w-r u-s-m-b-30">
+                                    <div class="w-r__container">
+                                        <div class="w-r__wrap-1">
+                                            <div class="w-r__img-wrap">
+
+                                                <img class="u-img-fluid" src="images/product/men/product8.jpg" alt=""></div>
+                                            <div class="w-r__info">
+
+                                                <span class="w-r__name">
+
+                                                    <a href="">New Fashion D Nice Elegant</a></span>
+
+                                                <span class="w-r__category">
+
+                                                    <a href="">Men Clothing</a></span>
+
+                                                <span class="w-r__price">$125.00
+
+                                                    <span class="w-r__discount">$160.00</span></span></div>
+                                        </div>
+                                        <div class="w-r__wrap-2">
+
+                                            <a class="w-r__link btn--e-brand-b-2" data-modal="modal" data-modal-id="#add-to-cart">ADD TO CART</a>
+
+                                            <a class="w-r__link btn--e-transparent-platinum-b-2" href="">VIEW</a>
+
+                                            <a class="w-r__link btn--e-transparent-platinum-b-2" href="#">REMOVE</a></div>
+                                    </div>
+                                </div> --}}
+                                <!--====== End - Wishlist Product ======-->
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="route-box">
+                                    <div class="route-box__g">
+
+                                        <a class="route-box__link" href=""><i class="fas fa-long-arrow-alt-left"></i>
+
+                                            <span>CONTINUE SHOPPING</span></a></div>
+                                    <div class="route-box__g">
+
+                                        <a class="route-box__link" href=""><i class="fas fa-trash"></i>
+
+                                            <span>CLEAR WISHLIST</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section Content ======-->
+            </div>
+            <!--====== End - Section 2 ======-->
+        </div>
+        <!--====== End - App Content ======-->
+       
+
+<script>
+    function changeQuantity(cartId,proid,count){
+        let quantity=parseInt(document.getElementById(proid).innerHTML)
+        count=parseInt(count)
+
+        $.ajax({
+            url:'/change-product-quantity',
+            data:{
+                cart:cartId,
+                product:proid,
+                count:count,
+                quantity:quantity
+            },
+            method:'post',
+            success:(response)=>{
+                if(response.removeProduct){
+              // alert("product removed from cart")
+               location.reload()
+
+                }else{
+                    document.getElementById(proid).innerHTML=quantity+count
+                }
+            }
+        })
+    }
+</script>
+<script>
+ function deleteQuantity(wishlistId,proid){
+       // let quantity=parseInt(document.getElementById(proid).innerHTML)
+       // count=parseInt(count)
+
+        $.ajax({
+            url:'/delete-wish-quantity',
+            data:{
+                wishlist:wishlistId,
+                product:proid,
+                //count:count,
+                //quantity:quantity
+            },
+            method:'post',
+            success:(response)=>{
+               // if(response.removeProduct){
+              // §"product removed from cart")
+             // alert("product removed")
+               location.reload()
+
+               // }
+            }
+        })
+    }
+    </script>
+<script>
+    function emptyCart(cartId){
+        console.log(cartId)
+        console.log(cartId)
+        console.log(cartId)
+       // let quantity=parseInt(document.getElementById(proid).innerHTML)
+       // count=parseInt(count)
+       console.log(typeof(cartId))
+       console.log(cartId.length)
+       if (cartId.length > 1){
+
+
+        $.ajax({
+            url:'/empty-cart',
+            data:{
+                cart:cartId
+                //product:proid,
+                //count:count,
+                //quantity:quantity
+            },
+            method:'post',
+            success:(response)=>{
+               // if(response.removeProduct){
+              // §"product removed from cart")
+              alert("cart cleared")
+               location.reload()
+
+               // }
+            }
+        })
+       }
+       else{
+
+       }
+    }
+    </script>
+   
+
+
+ 
+   
+       

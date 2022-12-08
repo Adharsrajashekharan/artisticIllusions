@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<section>
+    <div class="container">
+        <div class="a">
+        </div>
+        <table class="table mt-5" id="myTable">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th></th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+    <tr>
+      <th>{{addOne @index}}</th>
+      <td>{{this.firstname}}</td>
+      <td>{{this.Email}}</td> 
+      <td>{{this.Phone}}</td>
+      <td>
+         {{#if this.Access}}
+        <a href="/admin/block-user/{{this._id}}" class="btn btn-success">Block</a>
+             {{else}}
+            <a href="/admin/unblock-user/{{this._id}}" class="btn btn-danger delete">Unblock</a>  
+            {{/if}}
+            </td>
+      {{/each}}
+      
+     
+     
+        {{!-- <a href="/admin/edit-product/" class="btn btn-success" >Edit</a> --}}
+       
+      
+    </tr>
+
+  </tbody>
+</table>
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+ <script>
+      $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+    </script>
+<style>
+  .container{
+    background-color:rgb(246, 246, 246);
+  }
+  .table{
+    color:rgb(0, 0, 0)
+    ;
+  }
+ 
+</style>

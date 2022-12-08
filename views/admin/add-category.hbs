@@ -1,0 +1,48 @@
+<div class="container">
+
+<h2 class="text-center">Add Category</h2>
+<form action="/admin/add-category" method="post" enctype="multipart/form-data">
+{{!-- <div class="form-group">
+    <label for="number">no</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" name="no">
+  </div> --}}
+  {{!-- <div class="form-group">
+    <label for="name">name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="Category">
+  </div> --}}
+  
+  {{!-- <div  class="form-group">
+    <label for="exampleFormControlInput1">category</label>
+    <input type="text" class="form-control"  id="exampleFormControlInput1" name="category" >
+  </div> --}}
+      category
+
+  <div class="form-group">
+  <label>
+<input class="" list="browsers" name="Category" /></label>
+<datalist id="browsers">
+  <option value="Antique">
+  <option value="lights">
+  <option value="others">
+
+</datalist>
+</div>
+  {{!-- <div class="form-group">
+    <label for="name">price</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" name="price">
+  </div> --}}
+  
+  
+ 
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Description"></textarea>
+  </div>
+  {{!-- <div class="form-group">
+    <label for="exampleFormControlFile1">file input</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+  </div> --}}
+  <button class="btn btn-success" type="submit">submit</button>
+</form>
+
+</div>

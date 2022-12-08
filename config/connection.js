@@ -9,8 +9,7 @@ module.exports.connect=function(done){
 
 
     
-const url1='mongodb+srv://Adhars:Adhars1998@cluster0.fjkxciz.mongodb.net/'
-const url = 'mongodb://localhost:27017';
+const url='mongodb+srv://Adhars:Adhars1998@cluster0.fjkxciz.mongodb.net/'
 
 // Database Name
 const dbName = 'walmart';

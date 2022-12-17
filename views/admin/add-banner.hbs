@@ -1,0 +1,111 @@
+<section class="page-fill" class="pt-5">
+  <div class="container shadow-lg rounded mb-5">
+    <div class="row mt-4">
+      <div class="d-flex justify-content-between mt-1 mb-1">
+        <div>
+          <i class="fa-solid fa-bookmark fa-4x"
+            ><span style="font-size: 30%" class="ps-1">Banners</span></i
+          >
+        </div>
+      </div>
+    </div>
+    <form
+      id="bannerForm"
+      action="/admin/add-banner"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div
+        class="d-flex flex-column mb-2 flex-sm-column flex-md-row justify-content-center"
+      >
+        <div class="me-2 mb-2">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            placeholder="Banner name"
+            required
+          />
+        </div>
+
+        <div class="me-2 mb-2">
+          <input
+            type="file"
+            class="form-control"
+            name="banner"
+            id="banner"
+            placeholder="Banner"
+            onchange="viewImage(event)"
+            required
+          />
+        </div>
+
+        <div class="me-2 mb-2">
+          <img
+            src=""
+            alt="Image"
+            style="width: 300px; height: auto; display: none"
+            class="rounded p-1"
+            id="imgView"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary h-25">Add Banner</button>
+      </div>
+    </form>
+    <table
+      class="table table-fluid table-hover table-bordered pt-3"
+      id="myTable"
+      style="text-align: center"
+    >
+      <!-- style="text-align: center" -->
+      <thead>
+        <tr class="bg-dark text-white">
+          <th scope="col" style="text-align: center">No</th>
+          <th scope="col" style="text-align: center">Name</th>
+          <th scope="col" style="text-align: center">Banner</th>
+          <th scope="col" style="text-align: center">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+            {{#each banner}}
+          <th scope="row">{{addOne @index}}</th>
+          <td>{{this.name}}</td>
+          <td>
+            <img
+              style="width: 192px; height: 44.6px"
+              src="/product-images/{{this._id}}.jpg"
+              alt=""
+            />
+           
+          </td>
+          <td>
+            <!-- < if (user.access) {%> -->
+           
+            <a href="/admin/delete-banner/{{this._id}}" class="btn btn-danger delete"  >Delete</a>  
+           
+            <!-- <}%> -->
+          </td>
+        </tr>
+            {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- onclick="return confirm('Do you want to Block user.firstname user.lastname  ?')" -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+></script>
+
+<script>
+  function viewImage(event) {
+    document.getElementById("imgView").style.display = "block";
+    document.getElementById("imgView").src = URL.createObjectURL(
+      event.target.files[0]
+    );
+  }
+</script>

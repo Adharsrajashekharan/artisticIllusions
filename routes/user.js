@@ -339,20 +339,24 @@ router.post("/otp", (req, res) => {
   if (req.body.otp == userHelpers.obj.OTP) {
     res.redirect("/login");
   } else {
-    res.send("eeeeee");
+    res.render("/error");
   }
 });
 router.get('/place-order',async (req,res)=>{
+  let banner= await productHelpers.getAllbanner(req.session.user._id)
+console.log(banner)
 let total=await userHelpers.getTotalAmount(req.session.user._id)
 let cartProducts  = await userHelpers.getCartProducts(req.session.user._id);
 
-  res.render('user/place-order',{cartProducts,total,user:req.session.user})
+  res.render('user/place-order',{cartProducts,total,banner,user:req.session.user})
 }) 
 router.get('/product-detail/:id',async (req,res)=>{
   const id = req.params.id
   productHelpers.getAllProducts().then(async (products) => {
   productHelpers.getSingleProducts(id).then((product) => {
   res.render('user/product-detail',{product,products})
+}).catch(()=>{
+  res.render('error')
 })
 })
 })

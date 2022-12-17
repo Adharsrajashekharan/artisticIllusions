@@ -19,6 +19,7 @@
     "mongodb": "^4.11.0",
     "morgan": "~1.9.1",
     "nocache": "^3.0.4",
+    "nodemon": "^2.0.20",
     "promise": "^8.3.0",
     "razorpay": "^2.8.3",
     "sweetalert": "^2.1.2"

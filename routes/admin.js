@@ -215,12 +215,45 @@ router.get('/place-order/:id',(req,res)=>{
     res.redirect('/admin/orders')
   })
 })
+router.get('/view-order-products/:id',async(req,res)=>{
+  let products=await productHelper.getOrderProductsadmin(req.params.id)
+  res.render('user/view-order-products',{user:req.session.user,products,admin:true})
+})
 //sales report
 router.get('/sales-Report',function(req,res){
   productHelpers.getAllProducts().then((products)=>{
   res.render('admin/sales-report',{admin:true,products})
 })
 })
+router.get('/add-banner',function(req,res){
+  productHelpers.getAllbanner().then((banner)=>{
+
+  res.render('admin/add-banner',{admin:true,banner})
+})
+})
+
+router.post('/add-banner',function(req, res) {
+  // console.log(req.body);
+  // console.log(req.files.banner);
+
+  productHelpers.addBanner(req.body).then((id) => {
+    console.log("Inserted Id : " + id);
+    let banner = req.files.banner;
+    try {
+      banner.mv('./public/product-images/'+id+'.jpg');
+      res.redirect("/admin/add-banner");
+    } catch (err) {
+      console.log(err);
+    }
+  });
+})
+router.get('/delete-banner/:id',(req,res)=>{
+  let catId = req.params.id
+  productHelper.deletebanner(catId).then((response)=>{
+    res.redirect('/admin/add-banner')
+  })
+})
+
 
 
 

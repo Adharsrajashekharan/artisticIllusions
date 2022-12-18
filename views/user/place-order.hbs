@@ -45,21 +45,23 @@
 > {{#each banner}}
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img
+      <img 
         src="/product-images/{{this._id}}.jpg"
+        style="width: 20px; height:115px"
         class="d-block w-100"
         alt="First slide"
       />
     </div>
+        {{/each}}
+
    
     <div class="carousel-item">
       <img
-        {{!-- src="/product-images/{{this._id}}.jpg" --}}
+        src="/product-images/{{this._id}}.jpg"
         class="d-block w-100"
         alt="Second slide"
       />
     </div>
-    {{/each}}
   </div>
   <button
     class="carousel-control-prev"
@@ -435,7 +437,7 @@
                                                 </div> --}}
                                             </div>
                                         </div>
-                                        <div class="o-summary__section u-s-m-b-30">
+                                        {{!-- <div class="o-summary__section u-s-m-b-30">
                                             <div class="o-summary__box">
                                                 <h1 class="checkout-f__h1">SHIPPING & BILLING</h1>
                                                 <div class="ship-b">
@@ -453,7 +455,7 @@
                                                         <a class="ship-b__edit btn--e-transparent-platinum-b-2" data-modal="modal" data-modal-id="#edit-ship-address">Edit</a></div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="o-summary__section u-s-m-b-30">
                                             <div class="o-summary__box">
                                                 <table class="o-summary__table">
@@ -497,48 +499,48 @@
 
                                                         <span class="gl-text u-s-m-t-6">Pay Upon Cash on delivery. (This service is only available for some countries)</span>
                                                     </div>
-                                                    <div class="u-s-m-b-10">
+                                                    {{!-- <div class="u-s-m-b-10"> --}}
 
                                                         <!--====== Radio Box ======-->
-                                                        <div class="radio-box">
+                                                        {{!-- <div class="radio-box">
 
                                                             <input type="radio" id="direct-bank-transfer" name="payment">
                                                             <div class="radio-box__state radio-box__state--primary">
 
                                                                 <label class="radio-box__label" for="direct-bank-transfer">Direct Bank Transfer</label></div>
-                                                        </div>
+                                                        </div> --}}
                                                         <!--====== End - Radio Box ======-->
-
+{{!-- 
                                                         <span class="gl-text u-s-m-t-6">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</span>
-                                                    </div>
-                                                    <div class="u-s-m-b-10">
+                                                    </div> --}}
+                                                    {{!-- <div class="u-s-m-b-10"> --}}
 
                                                         <!--====== Radio Box ======-->
-                                                        <div class="radio-box">
+                                                        {{!-- <div class="radio-box">
 
                                                             <input type="radio" id="pay-with-check" name="payment">
                                                             <div class="radio-box__state radio-box__state--primary">
 
                                                                 <label class="radio-box__label" for="pay-with-check">Pay With Check</label></div>
-                                                        </div>
+                                                        </div> --}}
                                                         <!--====== End - Radio Box ======-->
 
-                                                        <span class="gl-text u-s-m-t-6">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span>
-                                                    </div>
+                                                        {{!-- <span class="gl-text u-s-m-t-6">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span>
+                                                    </div> --}}
                                                     <div class="u-s-m-b-10">
 
                                                         <!--====== Radio Box ======-->
-                                                        <div class="radio-box">
+                                                        {{!-- <div class="radio-box">
 
                                                             <input type="radio" id="pay-with-card" name="payment">
                                                             <div class="radio-box__state radio-box__state--primary">
 
                                                                 <label class="radio-box__label" for="pay-with-card">Pay With Credit / Debit Card</label></div>
-                                                        </div>
+                                                        </div> --}}
                                                         <!--====== End - Radio Box ======-->
 
-                                                        <span class="gl-text u-s-m-t-6">International Credit Cards must be eligible for use within the United States.</span>
-                                                    </div>
+                                                        {{!-- <span class="gl-text u-s-m-t-6">International Credit Cards must be eligible for use within the United States.</span>
+                                                    </div> --}}
                                                     <div class="u-s-m-b-10">
 
                                                         <!--====== Radio Box ======-->
@@ -551,7 +553,7 @@
                                                         </div>
                                                         <!--====== End - Radio Box ======-->
 
-                                                        <span class="gl-text u-s-m-t-6">When you click "Place Order" below we'll take you to Paypal's site to set up your billing information.</span>
+                                                        <span class="gl-text u-s-m-t-6">When you click "Razorpay" we'll take you to Razorpay's site to set up your billing information.</span>
                                                     </div>
                                                     <div class="u-s-m-b-15">
 
@@ -789,7 +791,7 @@
                                                     <!--====== End - Radio Box ======-->
                                                 </td>
                                                 <td>John Doe</td>
-                                                <td>4247 Ashford Drive Virginia VA-20006 USA</td>
+                                                <td>424Ashford Drive Virginia VA-20006 USA</td>
                                                 <td>Virginia VA-20006 USA</td>
                                                 <td>(+0) 900901904</td>
                                                 <td>

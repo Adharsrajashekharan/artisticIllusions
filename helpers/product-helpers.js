@@ -14,6 +14,7 @@ module.exports={
       ProductOffer : pro.ProductOffer,
       DiscountPrice :  Math.round(Discount),
       Stocks : parseInt(pro.Stocks) ,
+      Deleted:false,
       description : pro.description
     }
         console.log(product)
@@ -90,7 +91,7 @@ updateUser:(proid,proDetails)=>{
 
 
 
-deleteProduct:(proid)=>{
+deleteProduct:(prodId)=>{
     return new Promise((resolve,reject)=>{
         db.get()
         .collection(collection.PRODUCT_COLLECTION)
@@ -186,18 +187,48 @@ getCategory:()=>{
     })
 },
 
+// addCategory:(categoryData)=>{
+//     return new Promise(async(resolve,reject)=>{
+//          db.get().collection(collection.CATEGORY_COLLECTION)
+//         .insertOne(
+//             categoryData={
+//                 Category:categoryData.Category,
+//                 Description:categoryData.Description
+//             }
+//         ).then((data)=>{
+//             categoryData._id=data.insertedId
+//             resolve(categoryData)
+//         })
+//     })
+// },
+
+
+
 addCategory:(categoryData)=>{
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+      }
+    let category = capitalizeFirstLetter(categoryData.Category)
     return new Promise(async(resolve,reject)=>{
+        let response={}
+        let categoryExist = await db.get().collection(collection.CATEGORY_COLLECTION)
+        .findOne({Category:category})
+        if(categoryExist){
+            console.log("category already exist")
+            response.status=true
+            resolve(response)
+        }else{
          db.get().collection(collection.CATEGORY_COLLECTION)
         .insertOne(
             categoryData={
-                Category:categoryData.Category,
+                Category:category,
                 Description:categoryData.Description
             }
         ).then((data)=>{
             categoryData._id=data.insertedId
             resolve(categoryData)
         })
+      }
     })
 },
 
@@ -315,6 +346,30 @@ placeOrder:(userId)=>{
         .updateOne({_id:objectId(userId)},{
             $set:{
                 status:"placed"
+            }
+        }).then((response)=>{
+            resolve()
+        })
+    })
+},
+shipOrder:(userId)=>{
+    return new Promise((resolve,reject)=>{
+        db.get().collection(collection.ORDER_COLLECTION)
+        .updateOne({_id:objectId(userId)},{
+            $set:{
+                status:"shipped"
+            }
+        }).then((response)=>{
+            resolve()
+        })
+    })
+},
+deliverOrder:(userId)=>{
+    return new Promise((resolve,reject)=>{
+        db.get().collection(collection.ORDER_COLLECTION)
+        .updateOne({_id:objectId(userId)},{
+            $set:{
+                status:"delivered"
             }
         }).then((response)=>{
             resolve()

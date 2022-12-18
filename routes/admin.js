@@ -110,13 +110,16 @@ router.get('/edit-product/:id',async(req,res)=>{
 
 router.get('/categories',(req,res)=>{
   productHelper.getCategory().then((categories)=>{
-    res.render('admin/categories',{categories})
+    res.render('admin/categories',{categories,admin:true})
   })
 })
 
 router.get('/add-category',(req,res)=>{
-  res.render('admin/add-category')
+  res.render('admin/add-category',{"categoryErr":req.session.categoryExist ,admin:true})
+  req.session.categoryExist=false
+
 })
+
 
 router.post('/add-category',(req,res)=>{
   let categoryData=req.body
@@ -212,6 +215,18 @@ router.get('/cancel-order/:id',(req,res)=>{
 router.get('/place-order/:id',(req,res)=>{
   let userId=req.params.id
   productHelper.placeOrder(userId).then((response)=>{
+    res.redirect('/admin/orders')
+  })
+})
+router.get('/ship-order/:id',(req,res)=>{
+  let userId=req.params.id
+  productHelper.shipOrder(userId).then((response)=>{
+    res.redirect('/admin/orders')
+  })
+})
+router.get('/deliver-order/:id',(req,res)=>{
+  let userId=req.params.id
+  productHelper.deliverOrder(userId).then((response)=>{
     res.redirect('/admin/orders')
   })
 })

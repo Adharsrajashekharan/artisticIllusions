@@ -1,6 +1,9 @@
 <div class="container">
 
 <h2 class="text-center">Add Category</h2>
+        {{#if categoryErr}}
+          <p>{{categoryErr}}</p>
+        {{/if}}
 <form action="/admin/add-category" method="post" enctype="multipart/form-data">
 {{!-- <div class="form-group">
     <label for="number">no</label>

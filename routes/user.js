@@ -350,7 +350,7 @@ let cartProducts  = await userHelpers.getCartProducts(req.session.user._id);
 
   res.render('user/place-order',{cartProducts,total,banner,user:req.session.user})
 }) 
-router.get('/product-detail/:id',async (req,res)=>{
+router.get('/product-detail/:id',verifyLogin,async (req,res)=>{
   const id = req.params.id
   productHelpers.getAllProducts().then(async (products) => {
   productHelpers.getSingleProducts(id).then((product) => {

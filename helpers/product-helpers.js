@@ -378,6 +378,7 @@ deliverOrder:(userId)=>{
 },
 
 getAllOrders:(userId)=>{
+    console.log(userId);
     return new Promise(async(resolve,reject)=>{
     let totalorders=await db.get().collection(collection.ORDER_COLLECTION)
         .aggregate([

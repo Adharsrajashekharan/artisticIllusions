@@ -75,7 +75,7 @@ module.exports={
     sendMessage: (Phone) => {
         let randomOTP = Math.floor(Math.random() * 10000);
         const options = {
-          authorization:'jGMpbHuHOq35AFV26oha2gX3IoLfW2WaS8urwhDQkr1ihpkhKOsMrwAYDzES',
+          authorization:'LzDfy8EGHOTJwIxZB2WM9YbmFkcp0avodP3jg5CVitX4elqQh1zgl5y4rbwAYfDGJxcetus8T1aHWROS',
           sender_id: "EXPOSTORE",
           message: `Your OTP e-commerce is ${randomOTP}`,
           numbers: [Phone],
